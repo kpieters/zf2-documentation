@@ -98,8 +98,8 @@ constructor, which has the following signature (in pseudo-code):
 
 What can be injected:
 
-$driver - an array or an instance of ``Zend\Db\Adapter\Driver\DriverInterface`` $platform - (optional) an instance
-of ``Zend\Db\Platform\PlatformInterface``, the default will be created based off the driver implementation
+$driver - an array or an instance of ``Zend\Db\Adapter\Driver\DriverInterface`` 
+$platform - (optional) an instance of ``Zend\Db\Platform\PlatformInterface``, the default will be created based off the driver implementation
 $queryResultSetPrototype - (optional) an instance of ``Zend\Db\ResultSet\ResultSet``, to understand this object's
 role, see the section below on querying through the adapter
 
