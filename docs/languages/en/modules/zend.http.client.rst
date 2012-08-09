@@ -125,7 +125,7 @@ Available Methods
 
    Load the connection adapter
 
-   While this method is not called more than one for a client, it is seperated from ->request() to preserve logic
+   While this method is not called more than one for a client, it is seperated from ->send() to preserve logic
    and readability
 
    Returns null
@@ -524,11 +524,11 @@ called, the default request method is ``GET`` (see the above example).
    use Zend\Http\Client;
    $client = new Client();
    // Preforming a POST request
-   $response = $client->request('POST');
+   $response = $client->send('POST');
 
    // Yet another way of preforming a POST request
    $client->setMethod(Client::POST);
-   $response = $client->request();
+   $response = $client->send();
 
 .. _zend.http.client.parameters.example-1:
 
@@ -555,7 +555,7 @@ several ``GET`` parameters need to be set.
    // Adding several parameters with one call
    $client->setParameterGet(array(
        'first_name'  => 'Bender',
-       'middle_name' => 'Bending'
+       'middle_name' => 'Bending',
        'made_in'     => 'Mexico',
    ));
 
@@ -600,13 +600,13 @@ POST request, POST parameters are simply ignored.
    $request = new Request();
    $request->setUri('http://www.test.com');
    $request->setMethod('POST');
-   $request->setParameterPost(array('foo' => 'bar));
+   $request->setParameterPost(array('foo' => 'bar'));
 
    $client = new Client();
    $response = $client->dispatch($request);
 
    if ($response->isSuccess()) {
-       //  the POST was successfull
+       //  the POST was successful
    }
 
 
